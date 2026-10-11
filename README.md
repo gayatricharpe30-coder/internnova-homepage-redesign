@@ -29,18 +29,14 @@ Navigation, Hero, Statistics, About, Internship Programs, Internship Domains, Wh
 - Tablet: 2 column cards
 - Mobile: hamburger menu, single column cards, full width buttons
 
-## Project Structure
-```
-internnova-redesign/
+internnova-homepage-redesign/
 ├── index.html
 ├── css/
 │   └── style.css
 ├── js/
 │   └── script.js
-├── images/
-│   └── README.txt
+├── internnova-screenshots/
 └── README.md
-```
 
 ## How to Run
 1. Download or clone this repository.
@@ -48,13 +44,24 @@ internnova-redesign/
 3. Open `index.html` in a browser (or use the Live Server extension).
 
 ## Live Website
-Add your live link here after deployment.
+https://gayatricharpe30-coder.github.io/internnova-homepage-redesign/
 
 ## GitHub Repository
-Add your repository link here.
+https://github.com/gayatricharpe30-coder/internnova-homepage-redesign
 
 ## Screenshots
-Add your screenshots here after testing.
+
+### Desktop
+![Full homepage](internnova-screenshots/01_full_homepage.png)
+![Programs](internnova-screenshots/2_programs.png)
+![Why choose InternNova](internnova-screenshots/3_why_choose.png)
+![Reviews](internnova-screenshots/4_reviews.png)
+![FAQ](internnova-screenshots/5_faq.png)
+![Footer](internnova-screenshots/6_footer.png)
+
+### Mobile
+![Mobile view](internnova-screenshots/7_mobile.png)
+![Mobile menu](internnova-screenshots/m2_menu.png)
 
 ## Author
 Gayatri Charpe, MCA Student
