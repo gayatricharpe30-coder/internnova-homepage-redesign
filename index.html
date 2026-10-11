@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A student redesign concept of the InternNova homepage: virtual internships, courses and workshops for tech students.">
+    <title>InternNova Homepage Redesign (Student Project)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Skip link: helps keyboard users jump past the menu -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ========== 1. HEADER AND NAVIGATION ========== -->
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a href="#top" class="logo">Intern<span>Nova</span></a>
+
+            <!-- Menu button: visible only on tablet and mobile -->
+            <button class="menu-toggle" id="menuToggle" type="button"
+                aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">&#9776;</button>
+
+            <nav class="main-nav" id="navMenu" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#domains">Domains</a></li>
+                    <li><a href="#mentorship">Mentorship</a></li>
+                    <li><a href="#workshops">Workshops</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <a class="btn btn-primary nav-apply" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Apply now</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ========== 2. HERO ========== -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-text">
+                    <p class="hero-intro">Virtual internships for tech students</p>
+                    <h1>Real projects. Mentor feedback. A verified certificate.</h1>
+                    <p class="hero-lead">
+                        InternNova offers internships, courses and workshops in web development,
+                        data analytics, AI, cyber security and more, so students can show real
+                        work before their first job.
+                    </p>
+                    <div class="hero-buttons">
+                        <a class="btn btn-primary" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Apply now</a>
+                        <a class="btn btn-outline" href="#mentorship">See how it works</a>
+                    </div>
+                </div>
+
+                <!-- Hero card: built only with HTML and CSS (no image needed) -->
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <p class="hero-card-title">What every program includes</p>
+
+                        <div class="feature-row">
+                            <span class="feature-icon" aria-hidden="true">&#128736;</span>
+                            <div>
+                                <strong>Real-world projects</strong>
+                                <p>Weekly tasks that work like industry assignments.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-row">
+                            <span class="feature-icon" aria-hidden="true">&#128172;</span>
+                            <div>
+                                <strong>Mentor guidance</strong>
+                                <p>Feedback from industry experts while you build.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-row">
+                            <span class="feature-icon" aria-hidden="true">&#127891;</span>
+                            <div>
+                                <strong>Verified certificate</strong>
+                                <p>A completion certificate that can be verified online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== 3. STATISTICS ========== -->
+        <!-- TODO: These four numbers are the ones shown on internnova.co.in.
+             Check the live website and update them if they have changed. -->
+        <section class="stats" aria-label="InternNova in numbers">
+            <div class="container stats-grid reveal">
+                <div class="stat">
+                    <strong>1000+</strong>
+                    <span>Students trained</span>
+                </div>
+                <div class="stat">
+                    <strong>6</strong>
+                    <span>Industry domains</span>
+                </div>
+                <div class="stat">
+                    <strong>6 weeks</strong>
+                    <span>Internship duration</span>
+                </div>
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Verified certificates</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 4. ABOUT ========== -->
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2>What is InternNova?</h2>
+                    <p>
+                        InternNova is an online platform that gives students practical experience in
+                        technology. Instead of only watching lectures, students complete tasks,
+                        build projects and get guidance from mentors.
+                    </p>
+                    <p>
+                        Every program runs online, so a student from any college or city can join.
+                    </p>
+                </div>
+
+                <aside class="about-box">
+                    <h3>Who is it for?</h3>
+                    <ul class="check-list">
+                        <li>College students from different branches and universities</li>
+                        <li>Students who want hands-on practice, not only theory</li>
+                        <li>Students who need project work and a certificate for their resume</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ========== 5. INTERNSHIP PROGRAMS ========== -->
+        <section class="section section-alt" id="programs">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Internship programs and courses</h2>
+                    <p>Choose an internship to work on projects, or a course to build one skill step by step.</p>
+                </div>
+
+                <h3 class="subheading">Internships</h3>
+                <div class="card-grid">
+                    <article class="card">
+                        <span class="card-tag">Internship</span>
+                        <h4>Artificial Intelligence</h4>
+                        <p>Work on AI tasks and projects with mentor guidance.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Apply on InternNova</a>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-tag">Internship</span>
+                        <h4>AI and Machine Learning</h4>
+                        <p>Practice building and testing machine learning models through project tasks.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Apply on InternNova</a>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-tag">Internship</span>
+                        <h4>CAD Design and Drafting</h4>
+                        <p>Practice the design and drafting tasks used in engineering work.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Apply on InternNova</a>
+                    </article>
+                </div>
+
+                <h3 class="subheading">Courses</h3>
+                <div class="card-grid card-grid-4">
+                    <article class="card">
+                        <span class="card-tag">Course</span>
+                        <h4>Data Structures and Algorithms</h4>
+                        <p>Solve problems step by step to prepare for technical interviews.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Enroll on InternNova</a>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-tag">Course</span>
+                        <h4>Java Programming</h4>
+                        <p>Learn Java from core concepts to object-oriented programming.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Enroll on InternNova</a>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-tag">Course</span>
+                        <h4>Data Analytics and Business Intelligence</h4>
+                        <p>Learn to analyse data and present your findings clearly.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Enroll on InternNova</a>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-tag">Course</span>
+                        <h4>Python to AI</h4>
+                        <p>Start with Python basics and move on to data science and machine learning.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Enroll on InternNova</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 6. INTERNSHIP DOMAINS ========== -->
+        <!-- TODO: Check the domain list on internnova.co.in and edit these cards to match. -->
+        <section class="section" id="domains">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Internship domains</h2>
+                    <p>Some of the areas students can choose from. The full list is on the official website.</p>
+                </div>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#127760;</span>
+                        <h4>Web Development</h4>
+                        <p>Build websites with HTML, CSS and JavaScript.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#128202;</span>
+                        <h4>Data Analytics</h4>
+                        <p>Clean, analyse and visualise data.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#128274;</span>
+                        <h4>Cyber Security</h4>
+                        <p>Learn how systems are attacked and how to protect them.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#129302;</span>
+                        <h4>AI and Machine Learning</h4>
+                        <p>Train models and test them on practical problems.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#128208;</span>
+                        <h4>CAD Design and Drafting</h4>
+                        <p>Create technical drawings and design models.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#128187;</span>
+                        <h4>Programming</h4>
+                        <p>Strengthen your Python and Java fundamentals.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 7. WHY CHOOSE INTERNNOVA ========== -->
+        <section class="section section-alt" id="why">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why students choose InternNova</h2>
+                    <p>Six things every program is built around.</p>
+                </div>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#128736;</span>
+                        <h4>Real-world projects</h4>
+                        <p>You build something you can show, not just watch videos.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#128172;</span>
+                        <h4>Expert mentorship</h4>
+                        <p>Mentors review your work and answer your questions.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#9997;</span>
+                        <h4>Hands-on learning</h4>
+                        <p>Each week has tasks to complete, so you learn by doing.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#127970;</span>
+                        <h4>Industry-oriented tasks</h4>
+                        <p>Tasks are based on skills that are used in the industry.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#129517;</span>
+                        <h4>Career guidance</h4>
+                        <p>Advice on how to use your projects and certificate in a job search.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-icon" aria-hidden="true">&#127891;</span>
+                        <h4>Verified certificate</h4>
+                        <p>Your completion certificate can be verified online.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 8. LEARNING AND MENTORSHIP ========== -->
+        <section class="section" id="mentorship">
+            <div class="container two-col">
+                <div class="two-col-text">
+                    <h2>Learning and mentorship</h2>
+                    <p>
+                        Every program follows the same simple path. You always know what to do
+                        next and who to ask when you are stuck.
+                    </p>
+                    <ul class="check-list">
+                        <li>A student dashboard for your tasks and learning resources</li>
+                        <li>Mentor feedback on the work you submit</li>
+                        <li>A final evaluation before you receive your certificate</li>
+                    </ul>
+                </div>
+
+                <ol class="steps reveal">
+                    <li>
+                        <strong>Apply and enroll</strong>
+                        <p>Pick your domain and complete enrollment to reserve a seat in the next batch.</p>
+                    </li>
+                    <li>
+                        <strong>Open your dashboard</strong>
+                        <p>Log in to see your weekly tasks and learning resources.</p>
+                    </li>
+                    <li>
+                        <strong>Build projects</strong>
+                        <p>Complete tasks and projects with guidance from mentors.</p>
+                    </li>
+                    <li>
+                        <strong>Get certified</strong>
+                        <p>Submit your final evaluation to receive your verified certificate.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========== 9. WORKSHOPS ========== -->
+        <section class="section section-alt" id="workshops">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Workshops and events</h2>
+                    <p>Short live sessions to learn a topic or practice a skill. Dates are announced on the official website.</p>
+                </div>
+
+                <div class="card-grid card-grid-2">
+                    <article class="card">
+                        <span class="card-tag">Workshop</span>
+                        <h4>Python Data Analytics Workshop</h4>
+                        <p>Learn how to clean, analyse and visualise data using Python.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Register on InternNova</a>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-tag">Workshop</span>
+                        <h4>Data Structures and Algorithms Workshop</h4>
+                        <p>Practice common problems that are asked in technical interviews.</p>
+                        <a class="card-link" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Register on InternNova</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 10. TESTIMONIALS ========== -->
+        <!-- TODO (IMPORTANT): Do not invent reviews.
+             Open internnova.co.in, find real student reviews, and replace the three
+             placeholders below with the review text, student name and college. -->
+        <section class="section" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What students say</h2>
+                    <p>Read more reviews on the <a href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">official InternNova website</a>.</p>
+                </div>
+
+                <div class="card-grid">
+                                                            <figure class="card quote-card">
+                        <blockquote>
+                            <p>A free learning and experience based Internship and mentor support for the very step on the project assignment and learning along with practical experience. Every stage is an new task and new learning based experience and knowledge of engineering behind cybersecurity services.</p>
+                        </blockquote>
+                        <figcaption>Murapaka Vyshnavi, Cyber Security, Malla Reddy College of Engineering for Women, Hyderabad, India</figcaption>
+                    </figure>
+
+                    <figure class="card quote-card">
+                        <blockquote>
+                            <p>The experience I gained while doing this internship was very nice and I am grateful to the team of internNova that they have organized such an amazing internship</p>
+                        </blockquote>
+                        <figcaption>Ayush Kumar, Data Analytics Intern, VIT Bhopal University</figcaption>
+                    </figure>
+
+                    <figure class="card quote-card">
+                        <blockquote>
+                            <p>Good</p>
+                        </blockquote>
+                        <figcaption>Nagapatla Mohammad Irfan, Data Analytics, Mohan Babu University</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 11. FAQ ========== -->
+        <!-- TODO: These answers are kept general on purpose.
+             Open the FAQ on internnova.co.in and replace them with the official answers. -->
+        <section class="section section-alt" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently asked questions</h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <div class="faq-item">
+                        <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
+                                Do I need prior coding experience?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-1" hidden>
+                            <p>It depends on the program. Read the program details before you apply, and contact the InternNova team if you are not sure.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+                                Will I get a verified certificate?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-2" hidden>
+                            <p>InternNova programs include a verified certificate. You can check the exact conditions on the official website.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+                                Are the internships paid?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-3" hidden>
+                            <p>Fees and payment details are different for each program. Check the program page on the official website for current details.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+                                How does placement support work?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-4" hidden>
+                            <p>InternNova lists career guidance as part of its programs. For exact details about placement support, check the official website or contact the team.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 12. CALL TO ACTION ========== -->
+        <section class="cta" id="join">
+            <div class="container">
+                <h2>Ready to start your first project?</h2>
+                <p>Choose a program on the official InternNova website and apply for the next batch.</p>
+                <div class="cta-buttons">
+                    <a class="btn btn-accent" href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">Apply now</a>
+                    <a class="btn btn-outline-light" href="#programs">Browse programs</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== 13. FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+                <p class="footer-logo">InternNova</p>
+                <p>
+                    Homepage redesign, a student project by Gayatri Charpe.
+                    This is a learning concept and not the official InternNova website.
+                </p>
+            </div>
+
+            <div>
+                <h3>On this page</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#domains">Domains</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Official website</h3>
+                <ul class="footer-links">
+                    <li><a href="https://internnova.co.in" target="_blank" rel="noopener noreferrer">internnova.co.in</a></li>
+                    <li><a href="#top">Back to top</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Gayatri Charpe. InternNova name and content belong to InternNova.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
