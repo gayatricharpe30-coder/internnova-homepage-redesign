@@ -1,0 +1,925 @@
+/* =========================================================
+   InternNova Homepage Redesign - style.css
+   Author: Gayatri Charpe
+
+   Table of contents
+   1. Design tokens (colors, spacing, radius)
+   2. Base styles
+   3. Buttons
+   4. Header and navigation
+   5. Hero
+   6. Statistics
+   7. Sections, cards and lists
+   8. Steps (Learning and mentorship)
+   9. FAQ
+   10. Call to action
+   11. Footer
+   12. Scroll reveal animation
+   13. Responsive design (media queries)
+   ========================================================= */
+
+
+/* ---------- 1. DESIGN TOKENS ----------
+   These are CSS variables. If you want to change a color
+   for the whole website, change it here only. */
+:root {
+    /* Colors */
+    --primary: #5a2ea6;        /* main purple (buttons, links, icons) */
+    --primary-dark: #3f1d7a;   /* darker purple (hover, stats band) */
+    --accent: #f59e0b;         /* amber, used only for the main call-to-action */
+    --ink: #1f1536;            /* very dark purple for headings and body text */
+    --muted: #54506a;          /* grey-purple for secondary text */
+    --bg: #ffffff;             /* page background */
+    --bg-soft: #f4f1fb;        /* light lavender for alternate sections */
+    --border: #ddd6ee;         /* thin lines around cards */
+
+    /* Shape */
+    --radius-button: 8px;
+    --radius-card: 12px;
+    --radius-hero-card: 20px;
+
+    /* Spacing */
+    --section-space: 80px;     /* top and bottom space of each section */
+    --header-height: 70px;
+}
+
+
+/* ---------- 2. BASE STYLES ---------- */
+
+/* box-sizing makes width calculations easier for beginners */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when a menu link is clicked */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-size: 1rem;           /* 16px */
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+/* Every section with an id stops below the sticky header when scrolled to */
+section[id] {
+    scroll-margin-top: var(--header-height);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4 {
+    margin: 0 0 12px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);   /* grows and shrinks with screen width */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+a {
+    color: var(--primary);
+}
+
+/* Visible keyboard focus, important for accessibility */
+:focus-visible {
+    outline: 3px solid #1d4ed8;
+    outline-offset: 3px;
+}
+
+/* Centered content box. Keeps lines of text a readable length */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Skip link is hidden until a keyboard user focuses it */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 200;
+    padding: 10px 16px;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+}
+
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-button);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Main button: purple */
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* Secondary button: purple outline */
+.btn-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* Buttons used on the dark purple call-to-action band */
+.btn-accent {
+    background: var(--accent);
+    color: var(--ink);
+}
+
+.btn-accent:hover {
+    background: #fbb43a;
+}
+
+.btn-outline-light {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline-light:hover {
+    background: #ffffff;
+    color: var(--primary-dark);
+}
+
+
+/* ---------- 4. HEADER AND NAVIGATION ---------- */
+.site-header {
+    position: sticky;          /* stays at the top while scrolling */
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+/* The JavaScript adds this class after the page is scrolled a little */
+.site-header.scrolled {
+    box-shadow: 0 2px 10px rgba(31, 21, 54, 0.08);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a {
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* Hamburger button: hidden on desktop */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-button);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+
+/* ---------- 5. HERO ---------- */
+.hero {
+    padding: 88px 0;
+    background: var(--bg-soft);
+    overflow: hidden;          /* hides the decorative circle if it goes outside */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;   /* text column is a bit wider */
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-intro {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.hero-lead {
+    max-width: 34em;
+    margin: 20px 0 28px;
+    color: var(--muted);
+    font-size: 1.125rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* The card on the right side of the hero */
+.hero-visual {
+    position: relative;
+}
+
+/* Decorative circle behind the card, made with CSS only */
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    top: -22px;
+    right: -14px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.3;
+}
+
+.hero-card {
+    position: relative;       /* keeps the card above the circle */
+    padding: 24px 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-hero-card);
+    background: var(--bg);
+}
+
+.hero-card-title {
+    margin-bottom: 4px;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.feature-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.feature-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.feature-row p {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.feature-icon {
+    flex: 0 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--bg-soft);
+    font-size: 1.3rem;
+}
+
+
+/* ---------- 6. STATISTICS ---------- */
+.stats {
+    padding: 40px 0;
+    background: var(--primary-dark);
+    color: #ffffff;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.stat span {
+    color: #e6dcf7;
+    font-size: 0.95rem;
+}
+
+
+/* ---------- 7. SECTIONS, CARDS AND LISTS ---------- */
+.section {
+    padding: var(--section-space) 0;
+}
+
+/* Alternate background so sections are easy to tell apart */
+.section-alt {
+    background: var(--bg-soft);
+}
+
+.section-header {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-header p {
+    color: var(--muted);
+}
+
+.subheading {
+    margin: 0 0 16px;
+}
+
+.card-grid + .subheading {
+    margin-top: 48px;
+}
+
+/* Grid: 3 columns on desktop. Other layouts are changed in the media queries */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    background: var(--bg);
+}
+
+.card p {
+    flex-grow: 1;              /* pushes the link to the bottom of every card */
+    margin: 0 0 16px;
+    color: var(--muted);
+}
+
+.card h4 {
+    margin-bottom: 8px;
+}
+
+.card-tag {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--bg-soft);
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.card-icon {
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.card-link {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Review cards */
+.quote-card blockquote {
+    flex-grow: 1;
+    margin: 0 0 16px;
+}
+
+.quote-card blockquote p {
+    margin: 0;
+    color: var(--ink);
+}
+
+.quote-card figcaption {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* About section and Learning section use two columns */
+.about-grid,
+.two-col {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-grid {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.two-col {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+
+.about-text p,
+.two-col-text p {
+    max-width: 34em;
+    color: var(--muted);
+}
+
+.about-box {
+    padding: 28px;
+    border-radius: var(--radius-card);
+    background: var(--bg-soft);
+}
+
+/* List with tick marks */
+.check-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.check-list li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 30px;
+}
+
+.check-list li::before {
+    content: "\2714";          /* tick symbol */
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+
+/* ---------- 8. STEPS (Learning and mentorship) ---------- */
+.steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;       /* starts a counter for 1, 2, 3, 4 */
+}
+
+.steps li {
+    position: relative;
+    padding: 0 0 28px 60px;
+    counter-increment: step;
+}
+
+/* The number circle */
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 800;
+}
+
+/* The vertical line between the circles */
+.steps li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+}
+
+.steps li:last-child {
+    padding-bottom: 0;
+}
+
+.steps strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.steps p {
+    margin: 4px 0 0;
+    color: var(--muted);
+}
+
+
+/* ---------- 9. FAQ ---------- */
+.faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.faq-item h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    background: none;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: var(--bg-soft);
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    color: var(--primary);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+/* When the question is open, the + turns into a x */
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 20px 18px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+/* ---------- 10. CALL TO ACTION ---------- */
+.cta {
+    padding: 72px 0;
+    background: var(--primary);
+    color: #ffffff;
+    text-align: center;
+}
+
+.cta p {
+    max-width: 34em;
+    margin: 0 auto 28px;
+    color: #efe8fb;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+
+/* ---------- 11. FOOTER ---------- */
+.site-footer {
+    padding: 56px 0 24px;
+    background: #1b1230;
+    color: #d9d0ea;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.footer-brand p:last-child {
+    max-width: 30em;
+    margin-bottom: 0;
+}
+
+.site-footer h3 {
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #d9d0ea;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+/* ---------- 12. SCROLL REVEAL ANIMATION ----------
+   Only used on two blocks: the statistics and the steps.
+   The "js" class is added by script.js, so if JavaScript fails
+   the content is still visible. */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* People who turned on "reduce motion" in their system get no animation */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .btn,
+    .faq-icon {
+        transition: none;
+    }
+}
+
+
+/* ---------- 13. RESPONSIVE DESIGN ----------
+   Desktop (above 1024px): default styles above.
+   Tablet  (1024px and below): cards go from 3-4 columns to 2 columns.
+   Small tablet (860px and below): mobile menu, one-column layouts.
+   Mobile  (600px and below): everything in one column, bigger tap targets. */
+
+/* ----- Tablet ----- */
+@media (max-width: 1024px) {
+    :root {
+        --section-space: 64px;
+    }
+
+    .card-grid,
+    .card-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-list {
+        gap: 16px;
+    }
+}
+
+/* ----- Small tablet: switch to mobile menu ----- */
+@media (max-width: 860px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Menu is hidden until the button is clicked (JavaScript adds .open) */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 20px 24px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+        box-shadow: 0 8px 16px rgba(31, 21, 54, 0.08);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-apply {
+        margin-top: 20px;
+    }
+
+    .hero {
+        padding: 64px 0;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 600px) {
+    :root {
+        --section-space: 52px;
+    }
+
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero-lead {
+        font-size: 1rem;
+    }
+
+    /* Buttons become full width, easy to tap with a thumb */
+    .hero-buttons .btn,
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .card-grid,
+    .card-grid-4,
+    .card-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        margin-bottom: 28px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
